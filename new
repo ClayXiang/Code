@@ -1,0 +1,101 @@
+int prime(int x)
+{
+	int i, j,f;
+	if (x <= 1) {
+		return 0;
+	}
+	else {
+			for (j = 1; j < x; j++) {
+				f = x % j;
+				if (f == 0 && j != 1) {return 0;
+					break;
+					
+				}
+				if (j == x - 1) {
+					return 1;
+				}
+			}
+		}
+	}
+int PrimeSum(int y, int z)
+{
+	int q, i1, sum, yin, total = 0, a, b, digit = 0;
+	q = y;
+	if (q <= 1) {
+		q = 2;
+		while (q <= z) {
+			sum = 0;
+			q = q;
+			yin = q - 1;
+			for (i1 = 1; i1 < q; ++i1) {
+				if (yin == 0) {
+					yin = q - 1;
+				}
+				while (yin >= 1) {
+					a = q % yin;
+					b = i1 % yin;
+					if (a == b) {
+						if (a == 0) {
+							yin--;
+							break;
+						}
+						else {
+							yin--;
+						}
+					}
+					else {
+						yin--;
+					}
+				}
+				sum = sum + yin;
+			}
+			if (sum != 0) {
+				q = q + 1;
+			}
+			else {
+				total = total + q;
+				digit = digit + 1;
+				q = q + 1;
+			}
+		}
+		return total;
+	}
+	else {
+		while (q <= z) {
+			sum = 0;
+			q = q;
+			yin = q - 1;
+			for (i1 = 1; i1 < q; ++i1) {
+				if (yin == 0) {
+					yin = q - 1;
+				}
+				while (yin >= 1) {
+					a = q % yin;
+					b = i1 % yin;
+					if (a == b) {
+						if (a == 0) {
+							yin--;
+							break;
+						}
+						else {
+							yin--;
+						}
+					}
+					else {
+						yin--;
+					}
+				}
+				sum = sum + yin;
+			}
+			if (sum != 0) {
+				q = q + 1;
+			}
+			else {
+				total = total + q;
+				digit = digit + 1;
+				q = q + 1;
+			}
+		}
+		return total;
+	}
+}
